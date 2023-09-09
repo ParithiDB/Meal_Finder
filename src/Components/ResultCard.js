@@ -11,7 +11,7 @@ function SearchResult({ results }) {
   return (
     <>
         {results.map((result) => (
-          <div className="col-12 col-sm-12 col-md-3 col-lg-3 mb-4" key={result.idMeal}>
+          <div className="col mb-4" key={result.idMeal}>
             <div className="card">
               <img
                 src={result.strMealThumb}
