@@ -13,13 +13,10 @@ function App() {
   useEffect(() => {
     if (!searchQuery) return;
 
-    // Make the API request and update the state with the results
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`)
       .then((response) => response.json())
       .then((data) => {
-        // Handle the API response data here
-        // For example, you can update the state with the results
-        setSearchResults(data.meals || []); // If data.meals is undefined, set an empty array
+        setSearchResults(data.meals || []); 
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -27,12 +24,10 @@ function App() {
   }, [searchQuery]);
 
   const handleSearch = (query) => {
-    // Check if the query is empty
     if (!query) {
       alert('Enter a food name to search');
       return;
     }
-
     setSearchQuery(query);
   };
 
